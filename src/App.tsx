@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import { getIssues } from "./apis";
+import { IIssueNode } from "./types";
+import { List } from "antd";
+import MarkdownRender from "./components/markdown-render";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [issues, setIssues] = useState<IIssueNode[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    getIssues()
+      .then((res) => {
+        // console.debug(res);
+
+        setIssues(res.repository.issues.nodes);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.error(err);
+      });
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <List
+        loading={loading}
+        itemLayout="vertical"
+        dataSource={issues}
+        renderItem={(issue) => {
+          return (
+            <List.Item>
+              <List.Item.Meta title={issue.title} />
+              <MarkdownRender content={issue.body} />
+            </List.Item>
+          );
+        }}
+      ></List>
+    </div>
+  );
 }
 
-export default App
+export default App;
