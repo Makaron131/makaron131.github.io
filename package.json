@@ -16,6 +16,7 @@
     "deploy": "gh-pages -d build -r git@github.com:Makaron131/makaron131.github.io.git -b master"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.2",
     "antd": "^5.21.5",
     "github-markdown-css": "^5.7.0",
     "graphql": "^16.9.0",
@@ -23,7 +24,8 @@
     "prismjs": "^1.29.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-markdown": "^9.0.1"
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^7.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

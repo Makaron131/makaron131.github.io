@@ -1,44 +1,49 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { getIssues } from "./apis";
-import { IIssueNode } from "./types";
-import { List } from "antd";
-import MarkdownRender from "./components/markdown-render";
+import { Menu, MenuProps } from "antd";
+import { Route, Routes, useNavigate } from "react-router-dom";
+// import Home from "./pages";
+import Solution from "./pages/solution";
+import { useEffect } from "react";
 
 function App() {
-  const [issues, setIssues] = useState<IIssueNode[]>([]);
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const MenuItems = [
+    // {
+    //   key: "/",
+    //   label: "首页",
+    // },
+    {
+      key: "/solution",
+      label: "题解",
+    },
+  ];
 
   useEffect(() => {
-    setLoading(true);
-    getIssues()
-      .then((res) => {
-        // console.debug(res);
+    navigate("/solution");
+  }, [navigate]);
 
-        setIssues(res.repository.issues.nodes);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setLoading(false);
-        console.error(err);
-      });
-  }, []);
+  const handleMenuChange: MenuProps["onClick"] = ({ key }) => navigate(key);
 
   return (
-    <div>
-      <List
-        loading={loading}
-        itemLayout="vertical"
-        dataSource={issues}
-        renderItem={(issue) => {
-          return (
-            <List.Item>
-              <List.Item.Meta title={issue.title} />
-              <MarkdownRender content={issue.body} />
-            </List.Item>
-          );
-        }}
-      ></List>
+    <div className="layout">
+      <div className="navbar">
+        <div className="logo">Makaron131</div>
+        <Menu
+          className="topMenu"
+          mode="horizontal"
+          defaultSelectedKeys={["/solution"]}
+          items={MenuItems}
+          onClick={handleMenuChange}
+        />
+      </div>
+
+      <div className="content">
+        <Routes>
+          {/* <Route path="/" element={<Home />}></Route> */}
+          <Route path="/solution" element={<Solution />}></Route>
+        </Routes>
+      </div>
     </div>
   );
 }

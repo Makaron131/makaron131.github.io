@@ -1,0 +1,14 @@
+.detail-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 2rem;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.detail-back-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

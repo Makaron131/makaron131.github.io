@@ -1,0 +1,11 @@
+.solution .ant-table-thead .ant-table-cell {
+    padding: 8px 16px;
+}
+
+.solution .ant-table-tbody tr {
+    cursor: pointer;
+}
+
+.solution .ant-table-tbody tr td:first-of-type {
+    border-inline-end: none !important;
+}
