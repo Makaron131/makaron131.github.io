@@ -81,6 +81,16 @@
     flex-direction: column;
 }
 
+.solution-list .ant-spin-nested-loading {
+    flex: 1;
+    display: flex;
+}
+
+.solution-list .ant-spin-container {
+    flex: 1;
+    display: flex;
+}
+
 /* 列表项样式 */
 .solution-list-item {
     cursor: pointer;
@@ -142,7 +152,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto;
+    margin-top: 20px;
     /* 使用 margin-top: auto 让分页组件自动贴底 */
     padding: 12px 0;
     border-top: 1px solid #f0f0f0;
