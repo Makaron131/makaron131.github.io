@@ -17,7 +17,9 @@ const Detail = ({ issue, onBack }: IProps) => {
           className="detail-back-btn"
           icon={<LeftOutlined style={{ width: 16, height: 16 }} />}
           onClick={onBack}
-        ></Button>
+        >
+          返回列表
+        </Button>
         <div>{issue?.title}</div>
       </header>
 

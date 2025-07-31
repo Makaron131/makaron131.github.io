@@ -1,0 +1,358 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 个人介绍卡片 */
+.intro-card {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-section {
+  text-align: center;
+}
+
+.avatar {
+  margin-bottom: 16px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* 为真实头像添加边框和阴影 */
+}
+
+/* 如果头像加载失败，显示备用样式 */
+.avatar .ant-avatar-string {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.name {
+  margin-bottom: 16px !important;
+  color: #1f2937;
+}
+
+.bio {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 20px !important;
+}
+
+.contact-links {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-links .ant-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  height: auto;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-links .ant-btn:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-2px);
+}
+
+/* 技能栈卡片 */
+.skills-card {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* 算法题解展示卡片 */
+.algorithm-showcase-card {
+  margin-bottom: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+
+.algorithm-showcase {
+  padding: 32px;
+  background: #ffffff;
+  color: #1f2937;
+  position: relative;
+}
+
+.algorithm-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(0,0,0,0.02)"/><circle cx="75" cy="75" r="1" fill="rgba(0,0,0,0.02)"/><circle cx="50" cy="10" r="0.5" fill="rgba(0,0,0,0.01)"/><circle cx="20" cy="80" r="0.5" fill="rgba(0,0,0,0.01)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.algorithm-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.algorithm-title {
+  color: #1f2937 !important;
+  margin-bottom: 20px !important;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.algorithm-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-divider {
+  color: #d1d5db;
+  font-weight: 300;
+}
+
+.algorithm-description {
+  color: #4b5563 !important;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px !important;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.algorithm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+}
+
+.algorithm-tag {
+  background: #f3f4f6 !important;
+  color: #667eea !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.algorithm-tag:hover {
+  background: #667eea !important;
+  color: white !important;
+  border-color: #667eea !important;
+  transform: translateY(-2px);
+}
+
+.algorithm-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+}
+
+.explore-button {
+  background: #667eea !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-weight: 600;
+  height: 48px !important;
+  padding: 0 32px !important;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+  background: #5a67d8 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.preview-button {
+  background: transparent !important;
+  color: #667eea !important;
+  border: 2px solid #667eea !important;
+  border-radius: 12px !important;
+  font-weight: 600;
+  height: 48px !important;
+  padding: 0 32px !important;
+  transition: all 0.3s ease;
+}
+
+.preview-button:hover {
+  background: #667eea !important;
+  border-color: #667eea !important;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* 最新动态卡片 */
+.updates-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.update-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.update-item:last-child {
+  border-bottom: none;
+}
+
+.update-item .ant-typography {
+  margin: 0;
+}
+
+.update-item .anticon {
+  margin-right: 8px;
+  color: #1890ff;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 16px;
+  }
+
+  .avatar {
+    border-width: 2px;
+  }
+
+  /* 移动端备用文字样式 */
+  .avatar .ant-avatar-string {
+    font-size: 36px;
+  }
+
+  .contact-links {
+    justify-content: center;
+  }
+
+  .skills-container {
+    justify-content: center;
+  }
+
+  /* 算法展示区域响应式 */
+  .algorithm-showcase {
+    padding: 24px 20px;
+  }
+
+  .algorithm-title {
+    font-size: 24px !important;
+  }
+
+  .algorithm-stats {
+    gap: 12px;
+  }
+
+  .stat-number {
+    font-size: 16px;
+  }
+
+  .algorithm-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .explore-button,
+  .preview-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .update-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .update-item .ant-divider-vertical {
+    display: none;
+  }
+}
+
+/* 卡片标题样式 */
+.ant-card-head-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* 按钮样式优化 */
+.ant-card-actions .ant-btn-link {
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.ant-card-actions .ant-btn-link:hover {
+  color: #40a9ff;
+}

@@ -1,27 +1,23 @@
 import "./App.css";
 import { Menu, MenuProps } from "antd";
-import { Route, Routes, useNavigate } from "react-router-dom";
-// import Home from "./pages";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
+import Home from "./pages";
 import Solution from "./pages/solution";
-import { useEffect } from "react";
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const MenuItems = [
-    // {
-    //   key: "/",
-    //   label: "首页",
-    // },
+    {
+      key: "/",
+      label: "首页",
+    },
     {
       key: "/solution",
       label: "题解",
     },
   ];
-
-  useEffect(() => {
-    navigate("/solution");
-  }, [navigate]);
 
   const handleMenuChange: MenuProps["onClick"] = ({ key }) => navigate(key);
 
@@ -32,7 +28,7 @@ function App() {
         <Menu
           className="topMenu"
           mode="horizontal"
-          defaultSelectedKeys={["/solution"]}
+          selectedKeys={[location.pathname]}
           items={MenuItems}
           onClick={handleMenuChange}
         />
@@ -40,7 +36,7 @@ function App() {
 
       <div className="content">
         <Routes>
-          {/* <Route path="/" element={<Home />}></Route> */}
+          <Route path="/" element={<Home />}></Route>
           <Route path="/solution" element={<Solution />}></Route>
         </Routes>
       </div>
