@@ -17,7 +17,7 @@ const renderTags = (labels: ILabels) => {
   ));
 };
 
-const DEFAULT_PAGE_SIZE = 12;
+const DEFAULT_PAGE_SIZE = 9;
 
 const Solution = () => {
   const [issues, setIssues] = useState<IIssueNode[]>([]);

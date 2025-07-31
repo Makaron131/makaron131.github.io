@@ -3,7 +3,7 @@
 }
 
 .navbar {
-  z-index: 1;
+  z-index: 1000;
   height: 64px;
   width: 100%;
   box-sizing: border-box;
@@ -12,24 +12,173 @@
   position: fixed;
   top: 0;
   display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
-  padding: 0 16px 0 40px;
+  justify-content: center;
+  /* 居中对齐 */
+  padding: 0;
 }
 
-.navbar>div,
+.navbar-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  padding: 0 56px;
+  /* 与页面内容对齐 */
+}
+
+.navbar-content>div,
 .navbar li {
   line-height: 64px;
 }
 
-.navbar .logo {
+.logo {
   font-size: 22px;
   font-weight: 600;
   cursor: default;
   user-select: none;
-  margin-right: 420px;
+  color: #1f2937;
+}
+
+/* 桌面端菜单容器 */
+.desktop-menu-container {
+  position: absolute;
+  left: 60%;
+  transform: translateX(-50%);
+  /* 居中到60%位置 */
+}
+
+/* 移动端菜单按钮 */
+.mobile-menu-button {
+  margin-left: auto;
+  font-size: 18px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content {
-  padding: 0.5rem 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* 与导航栏内容对齐 */
+}
+
+/* 桌面端菜单样式 */
+.topMenu {
+  border-bottom: none;
+  background: transparent;
+}
+
+.topMenu .ant-menu-item {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.topMenu .ant-menu-item:hover {
+  background-color: #f0f4ff;
+  color: #667eea;
+}
+
+/* 移动端抽屉样式 */
+.mobile-drawer .ant-drawer-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-bottom: none;
+}
+
+.mobile-drawer .ant-drawer-title {
+  color: white;
+  font-weight: 600;
+}
+
+.mobile-drawer .ant-drawer-close {
+  color: white;
+}
+
+.mobile-drawer .ant-menu-vertical {
+  border-inline-end: 0 !important;
+}
+
+.drawer-menu {
+  border: none;
+  background: transparent;
+}
+
+.drawer-menu .ant-menu-item {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 8px 0;
+  border-radius: 8px;
+  height: 48px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.drawer-menu .ant-menu-item:hover {
+  background-color: #f0f4ff;
+  color: #667eea;
+}
+
+.drawer-menu .ant-menu-item-selected {
+  background-color: #667eea !important;
+  color: white !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .navbar-content {
+    padding: 0 40px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .desktop-menu-container {
+    display: none;
+  }
+
+  .content {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-content {
+    padding: 0 36px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .mobile-menu-button {
+    font-size: 16px;
+    height: 36px;
+    width: 36px;
+  }
+
+  .content {
+    padding: 0 12px;
+  }
+}
+
+/* 平板端优化 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .desktop-menu-container {
+    left: 65%;
+    /* 平板端稍微调整位置 */
+  }
+
+  .topMenu .ant-menu-item {
+    font-size: 15px;
+    margin: 0 6px;
+  }
 }
